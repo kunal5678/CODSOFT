@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="calci.css" />
+    <title>Calculator made by Kunal</title>
+  </head>
+  <!--Made by Kunal Joshi -->
+  <body>
+    <div class="calculator">
+      <div class="boxer" id="boxer">Calculator</div>
+      <div class="display" id="display">0</div>
+      <button class="btn" id="clear">C</button>
+      <button class="btn" id="backspace">←</button>
+      <button class="btn" id="divide">/</button>
+      <button class="btn" id="multiply">*</button>
+      <button class="btn" id="7">7</button>
+      <button class="btn" id="8">8</button>
+      <button class="btn" id="9">9</button>
+      <button class="btn" id="subtract">-</button>
+      <button class="btn" id="6">6</button>
+      <button class="btn" id="5">5</button>
+      <button class="btn" id="4">4</button>
+      <button class="btn" id="decimal">.</button>
+      <button class="btn" id="1">1</button>
+      <button class="btn" id="2">2</button>
+      <button class="btn" id="3">3</button>
+      <button class="btn" id="add">+</button>
+      <button class="btn" id="0">0</button>
+      <button class="btn" id="equals">=</button>
+
+      <div class="display2" id="display2">
+        Compiled by Kunal Joshi Codsoft Web Development Level 1 - Task 3
+      </div>
+    </div>
+    <script src="calci.js"></script>
+  </body>
+</html>
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #2C3E50; 
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 80px);
+  grid-gap: 15px;
+  max-width: 350px;
+  padding: 30px;
+  background-color: #34495E; 
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  text-align: right;
+  padding: 15px;
+  font-size: 28px;
+  background-color: #2C3E50;
+  color: #ECF0F1; 
+  border: 1px solid #2C3E50; 
+  border-radius: 8px;
+}
+
+.display2 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  text-align: left;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #2980B9; 
+  color: #ECF0F1; 
+  border: 1px solid #2980B9; 
+  border-radius: 8px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #1ABC9C; 
+  color: #ECF0F1;
+  border: 1px solid #1ABC9C; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #16A085; 
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const display = document.getElementById("display");
+  let currentInput = "0";
+  let currentOperator = "";
+  let prevInput = "";
+
+  function updateDisplay() {
+    display.textContent = currentInput;
+  }
+
+  function handleInput(input) {
+    if (!isNaN(input)) {
+      currentInput === "0" ? (currentInput = input) : (currentInput += input);
+    } else if (input === ".") {
+      if (!currentInput.includes(".")) currentInput += input;
+    } else if (input === "C") {
+      currentInput = "0";
+      currentOperator = "";
+      prevInput = "";
+    } else if (input === "CE") {
+      currentInput = currentInput.slice(0, -1) || "0";
+    } else if (input === "+" || input === "-" || input === "*" || input === "/") {
+      prevInput = currentInput;
+      currentInput = "0";
+      currentOperator = input;
+    } else if (input === "=") {
+      const prev = parseFloat(prevInput);
+      const current = parseFloat(currentInput);
+      switch (currentOperator) {
+        case "+":
+          currentInput = prev + current;
+          break;
+        case "-":
+          currentInput = prev - current;
+          break;
+        case "*":
+          currentInput = prev * current;
+          break;
+        case "/":
+          currentInput = prev / current;
+          break;
+      }
+      currentOperator = "";
+      prevInput = "";
+    }
+    updateDisplay();
+  }
+
+  document.querySelectorAll(".btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      handleInput(button.textContent);
+    });
+  });
+
+  updateDisplay();
+});
