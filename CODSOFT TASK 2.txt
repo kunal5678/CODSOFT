@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="script.css" />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <h1>Kunal Joshi</h1>
+      <p>Web Developer Enthusiast | Front End Developer</p>
+    </header>
+
+    <section id="about">
+      <img src="PIC1.jpeg" alt="Kunal Joshi" />
+    </section>
+
+    <section id="about1">
+      <h2>
+       As a fervent web developer and designer, I thrive on intricacy, ensuring every detail is meticulously crafted.
+      </h2>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <img src="image1.jpeg" alt="Project 1" />
+        <h3>Project 1</h3>
+        <p>Designed and coded a responsive website for a local business.</p>
+      </div>
+      <div class="project">
+        <img src="image2.jpeg" alt="Project 2" />
+        <h3>Project 2</h3>
+        <p>
+          Developed a JavaScript-based interactive CV showcasing my work.
+        </p>
+      </div>
+    </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p><a href="resume.pdf" download> Download CV (PDF)</a></p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: kunaljoshi@gmail.com</p>
+      <p>Phone: 740034567</p>
+    </section>
+    <footer>
+      <p>&copy; 2024 Kunal Joshi. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font stack */
+  margin: 0;
+  background-color: #F5F5F5; /* Light gray background */
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #FF5722; /* Orange */
+  color: #FFFFFF; /* White text */
+  text-align: left; /* Left-aligned text */
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px; /* Decreased font size */
+  font-weight: 600; /* Slightly lighter font weight */
+  letter-spacing: 1px; /* Decreased letter spacing */
+}
+
+/* Main Content Container */
+.container {
+  max-width: 1000px; /* Decreased maximum width */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* About Section Styles */
+#about {
+  text-align: center;
+  padding: 40px 0; /* Increased padding */
+}
+
+#about img {
+  width: 250px; /* Increased image width */
+  border-radius: 15px; /* Rounded border */
+  border: 3px solid #FF5722; /* Orange border */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Increased shadow */
+}
+
+/* Skills Section Styles */
+#skills {
+  text-align: center;
+  padding: 30px 0;
+}
+
+#skills ul {
+  list-style: none;
+}
+
+#skills li {
+  display: inline-block;
+  margin: 0 15px; /* Increased margin */
+}
+
+#skills li span {
+  display: block;
+  color: #2196F3; /* Blue */
+}
+
+/* Projects Section Styles */
+#projects {
+  text-align: center;
+  padding: 40px 0; /* Increased padding */
+}
+
+.project {
+  margin-bottom: 40px; /* Increased margin */
+}
+
+.project img {
+  max-width: 90%; /* Decreased maximum width */
+  border-radius: 20px; /* More rounded border */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow */
+}
+
+/* Resume and Contact Section Styles */
+#resume,
+#contact {
+  text-align: center;
+  padding: 50px 0; /* Increased padding */
+}
+
+#resume a,
+#contact a {
+  text-decoration: none;
+  color: #FFFFFF; /* White */
+  background-color: #4CAF50; /* Green */
+  border: 2px solid #4CAF50; /* Green border */
+  padding: 15px 40px; /* Increased padding */
+  border-radius: 50px; /* Circular button */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#resume a:hover,
+#contact a:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
