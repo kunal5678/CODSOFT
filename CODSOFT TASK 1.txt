@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="task.css" />
+    <title>Kunal Landing Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>CODSOFT INTERNSHIP</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Costing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Get Ready to Be Amazed by Our Extraordinary Product</h2>
+      <p>Unlock the Extraordinary Features Set to Elevate Your Everyday!</p>
+      <a href="#" class="cta-button">Lets Start</a>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2024 Your Company. All rights reserved.<br />
+        Owner- Kunal Joshi <br />
+        Web Development Internship Codsoft {Level 1 - Task 1}
+      </p>
+    </footer>
+  </body>
+</html>
+
+
+/* Header styles */
+
+
+/* Header styles */
+header {
+  background-color: #2196F3; /* Blue */
+  color: #FFFFFF; /* White */
+  padding: 30px;
+  text-align: left; /* Align text to the left */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block; /* Display list items as inline-block */
+  margin-right: 20px; /* Increased margin */
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFFFFF; /* White */
+  font-weight: bold;
+}
+
+/* Hero section styles */
+.hero {
+  background-image: url("codsoft.jpg");
+  background-size: cover;
+  text-align: center;
+  padding: 150px 0; /* Increased padding */
+  color: #FF5722; /* Orange */
+}
+
+.hero h2 {
+  font-size: 48px; /* Increased font size */
+  margin-bottom: 50px; /* Increased margin */
+  color: #4CAF50; /* Green */
+}
+
+.hero p {
+  font-size: 24px; /* Increased font size */
+  margin-bottom: 60px; /* Increased margin */
+  color: #673AB7; /* Purple */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px; /* Increased padding */
+  background-color: #FF5722; /* Orange */
+  color: #FFFFFF; /* White */
+  text-decoration: none;
+  border-radius: 50px; /* Circular button */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #FF8A65; /* Lighter orange on hover */
+}
+
+/* Footer styles */
+footer {
+  background-color: #222; /* Dark gray */
+  color: #FFFFFF; /* White */
+  text-align: center;
+  padding: 40px 0; /* Increased padding */
+}
